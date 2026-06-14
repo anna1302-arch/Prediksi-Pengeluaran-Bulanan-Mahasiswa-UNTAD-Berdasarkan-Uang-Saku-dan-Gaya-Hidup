@@ -19,7 +19,6 @@ regresi_untad/
 ```
 
 ## 📌 Variabel Penelitian
-
 | Simbol | Variabel | Tipe |
 |--------|----------|------|
 | **Y**  | Total Pengeluaran Bulanan (Rp) | Numerik (target) |
@@ -31,30 +30,24 @@ regresi_untad/
 | X6 | Semester | Numerik |
 
 ## 🚀 Cara Menjalankan
-
 ### 1. Clone repository
-
 ```bash
 git clone https://github.com/username/regresi-untad.git
 cd regresi-untad
 ```
 
 ### 2. Install dependencies
-
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 3. Jalankan analisis regresi
-
 ```bash
 python analisis_regresi_berganda.py
 ```
-
 Grafik hasil analisis akan tersimpan otomatis di folder `output/`.
 
 ## 📐 Model
-
 Model **Regresi Berganda (Multiple Linear Regression)** dibangun dengan:
 
 - **Preprocessing:** `StandardScaler` (normalisasi fitur numerik) + One-Hot Encoding untuk `X2_Tempat_Tinggal`
@@ -62,18 +55,6 @@ Model **Regresi Berganda (Multiple Linear Regression)** dibangun dengan:
 - **Evaluasi:** R², RMSE, MAE, dan 5-Fold Cross Validation
 - **Split data:** 80% latih / 20% uji
 
-## 📈 Output Grafik
-
-| File | Keterangan |
-|------|-----------|
-| `01_actual_vs_predicted.png` | Scatter plot nilai aktual vs prediksi |
-| `02_residual_plot.png` | Plot residual untuk uji asumsi |
-| `03_koefisien.png` | Bar chart koefisien tiap variabel |
-| `04_distribusi_y.png` | Histogram distribusi pengeluaran |
-| `05_correlation_heatmap.png` | Heatmap korelasi antar variabel |
-| `06_boxplot_tempat_tinggal.png` | Boxplot pengeluaran per tempat tinggal |
-
 ## 🔬 Referensi
-
 - [scikit-learn: LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
 - Dataset: Survey Pengeluaran Mahasiswa UNTAD (Palu, Sulawesi Tengah)
