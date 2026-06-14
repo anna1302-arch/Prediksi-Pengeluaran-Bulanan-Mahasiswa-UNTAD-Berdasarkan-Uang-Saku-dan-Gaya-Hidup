@@ -1,6 +1,3 @@
-"""
-analisis_regresi_berganda.py
-==============================
 Analisis Regresi Berganda – Pengeluaran Bulanan Mahasiswa UNTAD
 Menggunakan scikit-learn (https://scikit-learn.org/)
 
@@ -45,14 +42,11 @@ print("\nStatistik deskriptif:")
 print(df.describe().to_string())
 
 # ── 2. Preprocessing ──────────────────────────────────────────────────────────
-# One-hot encode X2_Tempat_Tinggal
 df_enc = pd.get_dummies(df, columns=["X2_Tempat_Tinggal"], drop_first=True)
-
 fitur = [c for c in df_enc.columns
          if c not in ["No", "Y_Total_Pengeluaran_Rp"]]
 X = df_enc[fitur].astype(float)
 y = df_enc["Y_Total_Pengeluaran_Rp"].astype(float)
-
 print("\nFitur yang digunakan:")
 for f in fitur:
     print(" -", f)
@@ -64,12 +58,8 @@ print(f"\nData latih : {len(X_train)} sampel")
 print(f"Data uji   : {len(X_test)} sampel")
 
 # ── 4. Model pipeline (StandardScaler + LinearRegression) ────────────────────
-pipeline = Pipeline([
-    ("scaler", StandardScaler()),
-    ("regressor", LinearRegression())
-])
+pipeline = Pipeline([("scaler", StandardScaler()), ("regressor", LinearRegression())])
 pipeline.fit(X_train, y_train)
-
 y_pred_train = pipeline.predict(X_train)
 y_pred_test  = pipeline.predict(X_test)
 
@@ -100,7 +90,6 @@ print(f"  R² rata-rata : {cv_scores.mean():.4f} ± {cv_scores.std():.4f}")
 reg   = pipeline.named_steps["regressor"]
 coefs = pd.Series(reg.coef_, index=fitur).sort_values(key=abs, ascending=False)
 intercept = reg.intercept_
-
 print("\n" + "=" * 60)
 print("KOEFISIEN REGRESI")
 print("=" * 60)
