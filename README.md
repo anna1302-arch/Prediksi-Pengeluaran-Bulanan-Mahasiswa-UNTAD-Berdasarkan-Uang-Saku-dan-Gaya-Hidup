@@ -8,13 +8,6 @@ regresi_untad/
 ├── Dataset_Pengeluaran_Mahasiswa_Untad_100.csv   # Dataset lengkap (100 responden)
 ├── analisis_regresi_berganda.py                   # Analisis utama (scikit-learn)
 ├── requirements.txt
-├── output/
-│   ├── 01_actual_vs_predicted.png
-│   ├── 02_residual_plot.png
-│   ├── 03_koefisien.png
-│   ├── 04_distribusi_y.png
-│   ├── 05_correlation_heatmap.png
-│   └── 06_boxplot_tempat_tinggal.png
 └── README.md
 ```
 
